@@ -3,14 +3,14 @@ package com.nexclipper.prometheus.service;
 import com.nexclipper.prometheus.ENDPOINT;
 import com.nexclipper.prometheus.util.Connection;
 
-public class Label {
+public class Target {
 	private Connection connection;
-	
-	public Label() {
+
+	public Target() {
 		connection = new Connection();
 	}
-	
-	public String getMetricList() {
-		return connection.get(ENDPOINT.LABEL.LIST);
+	public String getTargetList() {
+		return this.connection.get(ENDPOINT.TARGET.LIST);
 	}
+
 }
