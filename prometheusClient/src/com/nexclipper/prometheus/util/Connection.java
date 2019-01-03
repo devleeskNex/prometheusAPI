@@ -23,7 +23,6 @@ public class Connection {
 			con = (HttpURLConnection)url.openConnection();
 			con.setRequestMethod("GET");
 			con.getInputStream();
-			System.out.println("Response Code - " + con.getResponseCode());
 			return getData(con.getInputStream());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -48,7 +47,6 @@ public class Connection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("result = " + result);
 		return result;
 	}
 }

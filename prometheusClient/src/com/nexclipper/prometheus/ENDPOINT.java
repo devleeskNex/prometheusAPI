@@ -10,4 +10,8 @@ public interface ENDPOINT {
 		String LIST = APIVERSION + "/targets";
 	}	
 	
+	public interface SERIES {
+		String LIST = APIVERSION + "/series";
+	}
+	
 }
