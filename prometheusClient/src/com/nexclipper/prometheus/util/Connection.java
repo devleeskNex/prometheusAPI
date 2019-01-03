@@ -1,4 +1,4 @@
-package com.nexclipper.prometheus;
+package com.nexclipper.prometheus.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -8,11 +8,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Connection {
-	public String get (String urlStr) {
+	
+	private String SERVER = "";
+	public Connection() {
+		this.SERVER = new Server().info();
+	}
+	
+	
+	public String get (String endpoint) {
 		URL url = null;
 		HttpURLConnection con = null;
 		try {
-			url = new URL(urlStr);
+			url = new URL(this.SERVER + endpoint);
 			con = (HttpURLConnection)url.openConnection();
 			con.setRequestMethod("GET");
 			con.getInputStream();
